@@ -80,7 +80,7 @@ const resume = () => {
               <h2 className="text-4xl !text-black font-bold">Resume Review</h2>
                     {feedback ? (
                         <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
-                            <Summary  />
+                            <Summary feedback={feedback} />
                             <ATS />
                             <Details  />
                         </div>
