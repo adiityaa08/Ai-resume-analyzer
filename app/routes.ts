@@ -4,5 +4,6 @@ export default [
     index("routes/home.tsx"),
     route('/auth', 'routes/auth.tsx'), //path -> file to point 
     route('/upload', 'routes/upload.tsx'),
+    route('/resume/:id', 'routes/resume.tsx'),
 
 ] satisfies RouteConfig;
