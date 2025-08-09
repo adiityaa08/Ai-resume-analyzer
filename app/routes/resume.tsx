@@ -56,10 +56,19 @@ const resume = () => {
   return (
     <main className="!pt-0">
         <nav className="resume-nav">
-            <Link to="/upload" className="back-button">
-                <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
-                <span className="text-gray-800 text-sm font-semibold">Back to Upload</span>
-            </Link>
+          
+            <div className="button-container flex space-x-4">
+                <Link to="/upload" className="back-button flex items-center">
+                    <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
+                    <span className="text-gray-800 text-sm font-semibold">Back to Upload</span>
+                </Link>
+            
+                <Link to="/" className="back-button flex items-center">
+                    <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
+                    <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>
+                </Link>
+            </div>
+          
         </nav>
         <div className="flex flex-row w-full max-lg:flex-col-reverse">
         <section className="feedback-section bg-[url('/images/bg-small.svg') bg-cover h-[100vh] sticky top-0 items-center justify-center">
@@ -81,8 +90,8 @@ const resume = () => {
                     {feedback ? (
                         <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
                             <Summary feedback={feedback} />
-                            <ATS />
-                            <Details  />
+                            <ATS score={feedback.ATS.score || 0} suggestions={feedback.ATS.tips || []} />
+                            <Details feedback={feedback} />
                         </div>
                     ) : (
                         <img src="/images/resume-scan-2.gif" className="w-full" />
