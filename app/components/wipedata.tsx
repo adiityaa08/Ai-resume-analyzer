@@ -20,7 +20,7 @@ const WipeData = () => {
 
     useEffect(() => {
         if (!isLoading && !auth.isAuthenticated) {
-            navigate("/auth?next=/wipe");
+            navigate("/auth?next=/");
         }
     }, [isLoading, auth.isAuthenticated, navigate]);
 
@@ -41,7 +41,12 @@ const WipeData = () => {
         window.dispatchEvent(new Event("data-wiped"));
     };
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading)
+    {
+        return <button className="primary-button w-fit">
+        Wipe Data
+       </button>;
+    } 
     if (error) return <div>Error: {error}</div>;
 
     return (
