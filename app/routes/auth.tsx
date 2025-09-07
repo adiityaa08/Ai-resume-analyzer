@@ -15,7 +15,7 @@ const Auth = () => {
 
   useEffect(() => {
     if (auth.isAuthenticated) {
-      navigate(next || "/"); // redirect logged-in users
+      navigate(next || "/dashboard"); // redirect logged-in users
     }
   }, [auth.isAuthenticated, next]);
 

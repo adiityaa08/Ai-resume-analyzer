@@ -1,9 +1,16 @@
-import { type RouteConfig, index, route} from "@react-router/dev/routes";
+import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
 export default [
-    index("routes/home.tsx"),
-    route('/auth', 'routes/auth.tsx'), //path -> file to point 
-    route('/upload', 'routes/upload.tsx'),
-    route('/resume/:id', 'routes/resume.tsx'),
+  // Landing page becomes index (/)
+  index("routes/landing.tsx"),
 
+  // Dashboard after login
+  route("/dashboard", "routes/home.tsx"),
+
+  // Auth page
+  route("/auth", "routes/auth.tsx"),
+
+  // Upload + Resume
+  route("/upload", "routes/upload.tsx"),
+  route("/resume/:id", "routes/resume.tsx"),
 ] satisfies RouteConfig;
