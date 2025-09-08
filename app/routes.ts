@@ -2,7 +2,7 @@ import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
 export default [
   // Landing page becomes index (/)
-  index("routes/landing.tsx"),
+  index("routes/Landing.tsx"),
 
   // Dashboard after login
   route("/dashboard", "routes/home.tsx"),

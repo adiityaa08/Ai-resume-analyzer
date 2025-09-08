@@ -3,7 +3,7 @@ import React from "react";
 import Hero from "../pages/hero";
 import Features from "../pages/features";
 import Footer from "../pages/footer"
-import Navigation from "../pages/navigation";
+
 
 const Landing: React.FC = () => {
   return (

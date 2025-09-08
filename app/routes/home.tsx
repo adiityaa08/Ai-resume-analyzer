@@ -45,27 +45,36 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+    <main className="bg-[url('/images/bg-main.svg')] bg-cover min-h-screen">
       <Navbar />
 
-      <section className="main-section">
-        <div className="page-heading py-16">
-          <h1>Track Your Applications & Resume Ratings</h1>
+      <section className="px-4 sm:px-8 lg:px-16">
+        <div className="text-center py-12 sm:py-14">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug">
+            Track Your Applications & Resume Ratings
+          </h1>
           {!loadingResumes && resumes?.length === 0 ? (
-            <h2>No resumes found. Upload your first resume to get feedback.</h2>
+            <h2 className="text-sm sm:text-base lg:text-lg text-gray-300 mt-2">
+              No resumes found. Upload your first resume to get feedback.
+            </h2>
           ) : (
-            <h2>Review your submissions and check AI-powered feedback.</h2>
+            <h2 className="text-sm sm:text-base lg:text-lg text-gray-300 mt-2">
+              Review your submissions and check AI-powered feedback.
+            </h2>
           )}
         </div>
 
         {loadingResumes && (
           <div className="flex flex-col items-center justify-center">
-            <img src="/images/resume-scan-2.gif" className="w-[200px]" />
+            <img
+              src="/images/resume-scan-2.gif"
+              className="w-[150px] sm:w-[200px]"
+            />
           </div>
         )}
 
         {!loadingResumes && resumes.length > 0 && (
-          <div className="resumes-section">
+          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {resumes.map((resume) => (
               <ResumeCard key={resume.id} resume={resume} />
             ))}
@@ -76,7 +85,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center mt-10 gap-4">
             <Link
               to="/upload"
-              className="primary-button w-fit text-xl font-semibold"
+              className="primary-button w-fit text-base sm:text-lg lg:text-xl font-semibold px-6 py-3"
             >
               Upload Resume
             </Link>

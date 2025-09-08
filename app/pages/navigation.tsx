@@ -15,13 +15,15 @@ const Navigation: React.FC = () => {
             <span className="text-xl font-bold text-gray-900">Resumind</span>
           </div>
 
-          {/* CTA Button */}
-          <Link
-            to="/auth"
-            className="relative px-6 py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-teal-600 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.6)] hover:scale-105"
-          >
-            Get Started
-          </Link>
+          {/* CTA Button (visible on all screens, adjusts size on mobile) */}
+          <div>
+            <Link
+              to="/auth"
+              className="px-4 py-2 sm:px-6 sm:py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-teal-600 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.6)] hover:scale-105 text-sm sm:text-base"
+            >
+              Get Started
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
