@@ -4,7 +4,7 @@ import FileUploader from "~/components/FileUploader";
 import {usePuterStore} from "~/lib/puter";
 import {useNavigate} from "react-router";
 import {convertPdfToImage} from "~/lib/pdf2img";
-import {generateUUID} from "../lib/utlis";
+import {generateUUID} from "../lib/utlis"
 import {prepareInstructions} from "../../constants";
 
 const Upload = () => {
@@ -65,8 +65,7 @@ const Upload = () => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted');
-        const form = e.currentTarget;
+        const form = e.currentTarget.closest('form');
         if(!form) return;
         const formData = new FormData(form);
 
@@ -84,12 +83,12 @@ const Upload = () => {
             <Navbar />
 
             <section className="main-section">
-                <div className="page-heading py-11">
+                <div className="page-heading py-16">
                     <h1>Smart feedback for your dream job</h1>
                     {isProcessing ? (
                         <>
                             <h2>{statusText}</h2>
-                            <img src="/images/resume-scan.gif" className="w-full" />
+                            <img src="/images/resume-scan.gif" className="w-80" />
                         </>
                     ) : (
                         <h2>Drop your resume for an ATS score and improvement tips</h2>
