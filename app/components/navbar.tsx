@@ -13,7 +13,7 @@ const Navbar = () => {
         {/* Navbar container */}
         <div className="flex justify-between items-center bg-white shadow-md rounded-full px-6 py-3">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/dashboard" className="flex items-center">
             <span className="text-2xl font-bold text-gradient">RESUMIND</span>
           </Link>
 
