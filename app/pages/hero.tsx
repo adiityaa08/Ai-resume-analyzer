@@ -7,7 +7,8 @@ const Hero: React.FC = () => {
   return (
     <div className="relative">
       <Navigation />
-      <section className="bg-[url('/images/bg-main.svg')] bg-cover bg-center min-h-screen flex items-start justify-center pt-20 sm:pt-24 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[url('/images/bg-main.svg')] bg-cover bg-center min-h-[85vh] flex items-start justify-center pt-20 sm:pt-24 px-4 sm:px-6 lg:px-8">
+
 
 
         <div className="relative max-w-7xl mx-auto text-center">
